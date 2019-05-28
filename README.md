@@ -3,6 +3,18 @@ A fast, extensive and powerful allround media and game library for the Nintendo 
 
 #### Click [here](#installation) to get to the installation instructions.
 
+## 変更点
+
+### スプライト
+既にスプライトシートをセット済みのスプライトに対して、
+```cpp
+    spr.setSpriteSheet("romfs:/sheet.t3x", 0);
+    spr.setSpriteSheetIndex(7);
+```
+とインデックスのみ変更を適用出来る。
+
+また、これらのsprite.setSprite~関数はいずれもセット後に座標やスケール等がリセットされていたが、これがリセットされないように変更。
+
 ### スプライトアニメーション
 ```cpp
 #include <m3dia.hpp>
@@ -17,6 +29,7 @@ int main() {
     
     //メンバ関数Animateを呼び出します
     //列挙した配列とコマ切り替えのインターバル、ループするかどうかのフラグを渡します
+    spr.setSpriteSheet("romfs:/sheet.t3x");
     spr.Animate(Table, 250, true);
 
     while (app.isRunning()) {
@@ -32,5 +45,6 @@ int main() {
     }
 }
 ```
-### その他
+
+## その他
 インストール方法などについては [m3diaLib-CTR](https://github.com/m3diaLib-Team/m3diaLib-CTR)を参照。
