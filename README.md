@@ -18,6 +18,7 @@ The core module contains all functionality for interacting with the system. Its 
  * Time measurement
  * Support for the RomFS
  * Multithreading and concurrency
+ * スプライトのアニメーションを実装 (dmats97)
 
 ### Input
 The input module does what its name says: It handles each and every input for interacting with the user.
